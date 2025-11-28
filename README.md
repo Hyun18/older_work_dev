@@ -55,9 +55,13 @@ project/
 - 코드 스타일
 
 ## 라이선스(License)
-
+- X
 
 ## 팀정보 (Authors)
 - 강다영, 김진송, 김현희, 박성준
+
+## 포트폴리오
+[노인일자리.pptx](https://github.com/user-attachments/files/23828103/_.pptx)
+
   
 
