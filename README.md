@@ -22,13 +22,6 @@
 <img width="922" height="485" alt="스크린샷 2025-11-29 오전 3 11 55" src="https://github.com/user-attachments/assets/0ce20319-9eb9-49d6-99fc-4752efb66d50" />
 
 
-## 설치 및 실행법(installation/Usage)
-- 환경 요구사항(Node, Python 버전 등)
-- 설치 단계(명령어 포함)
-- 실행 방법
-- (선택) 예제 코드 or 예제 사용법
-
-
 ## 구조(Project Structure)
 ```
 project/
