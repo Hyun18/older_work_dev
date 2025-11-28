@@ -15,9 +15,12 @@
 
 ## 데모(스크린샷 Or url)
 - 링크 및 스크린샷
+<img width="922" height="485" alt="스크린샷 2025-11-29 오전 3 13 43" src="https://github.com/user-attachments/assets/e7a1bba6-8454-496d-96e6-db1124e9646d" />
+
 
 ## 기능
-- 주요 기능 목록
+<img width="1011" height="567" alt="스크린샷 2025-11-29 오전 3 11 55" src="https://github.com/user-attachments/assets/0ce20319-9eb9-49d6-99fc-4752efb66d50" />
+
 
 ## 설치 및 실행법(installation/Usage)
 - 환경 요구사항(Node, Python 버전 등)
@@ -37,6 +40,8 @@ project/
 
 ## 기술 스택(Tech Stack)
 - 사용한 언어/프레임워크/라이브러리
+<img width="543" height="307" alt="스크린샷 2025-11-29 오전 3 09 24" src="https://github.com/user-attachments/assets/e24f9672-dc22-4df1-8233-db65b59931cc" />
+
 
 ## 환경 변수(Environment Variables) - 선택
 - .env에 무엇이 필요한지
@@ -50,9 +55,9 @@ project/
 - 코드 스타일
 
 ## 라이선스(License)
-- MIT< Apache etc.
+
 
 ## 팀정보 (Authors)
-- 팀원
+- 강다영, 김진송, 김현희, 박성준
   
 
