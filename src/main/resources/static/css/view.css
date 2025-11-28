@@ -1,0 +1,132 @@
+/* 기본 설정 */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+    color: #555;
+}
+
+/* 폼 스타일 */
+#viewFrm {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#viewFrm div {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #555;
+}
+
+#viewFrm div span {
+    font-weight: bold;
+    color: #000;
+}
+
+/* content 영역 자동 줄바꿈 */
+#content {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+}
+
+#content span {
+    display: block;
+    width: 100%;
+}
+
+/* 버튼 컨테이너 */
+#buttonContainer {
+    text-align: right; /* 버튼을 오른쪽 정렬 */
+    margin-top: 20px; /* 폼 내용과 버튼 사이 간격 */
+    margin: auto;
+}
+
+/* 버튼 스타일 */
+button  {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-left: 10px; /* 버튼 간격 */
+}
+
+#buttonContainer a{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #5C92AC;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-left: 10px; /* 버튼 간격 */
+}
+
+#modify {
+    background-color: #007bff;
+    color: #fff;
+}
+
+#modify:hover {
+    background-color: #0056b3;
+}
+
+#delete {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+#delete:hover {
+    background-color: #a71d2a;
+}
+
+.footer1 {
+	background-color:var(--color-main);
+    color: #fff;
+    padding: 20px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-content1{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.footer-content1 p {
+   font-size: 14px;
+    text-align: left;
+    margin: 5px 0;
+}
+
+.footer-content1 p {
+    margin: 5px 0;
+}

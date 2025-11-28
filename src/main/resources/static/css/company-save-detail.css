@@ -1,0 +1,45 @@
+   .signup-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    
+    }
+    .signup-form input[type="text"], 
+    .signup-form input[type="email"], 
+    .signup-form input[type="file"] {
+    width: 500px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+	}
+	
+	#gender, #hpNotiSdate, #hpNotiEdate, #projDate,
+	#hireCnt, #hpInvtCnt, #trnStatNm, #dstrCd2Nm{
+	padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 500px;
+	}
+	
+	#telNum{
+	padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 500px;
+}
+	
+	textarea{
+	width: 500px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+	}
+	.signup-form .form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+	}

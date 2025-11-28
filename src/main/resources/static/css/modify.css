@@ -1,0 +1,105 @@
+/* 전체 폼 스타일 */
+form {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* 제목 */
+h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* 폼 내부 요소 스타일 */
+form div {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #333;
+}
+
+form div input[type="text"],
+form div textarea {
+    flex: 1;
+    margin-left: 10px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+}
+
+form div textarea {
+    resize: none;
+    height: 120px;
+}
+/* 버튼 컨테이너 */
+#buttonContainer {
+    display: flex; /* 버튼을 한 줄로 배치 */
+    align-items: center;
+    justify-content: center; /* 버튼을 오른쪽 정렬 */
+    gap: 10px; /* 버튼 간격 */
+    margin-top: 20px; /* 폼 내용과 버튼 사이 간격 */
+}
+
+/* 버튼 스타일 */
+#modify-success-btn, #back {
+    display: inline-block;
+    width: 150px; /* 버튼의 너비를 동일하게 설정 */
+    height: 40px; /* 버튼의 높이를 동일하게 설정 */
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 수정 버튼 스타일 */
+#modify-success-btn {
+    background-color: #5C92AC; 
+    color: white;
+}
+
+
+
+/* 뒤로가기 버튼 스타일 */
+#back {
+    background-color: #dcdcdc; /* 회색 배경 */
+    color: #333;
+}
+
+#back:hover {
+    background-color: #c0c0c0; /* 회색 배경 hover 효과 */
+}
+
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    form {
+        padding: 15px;
+    }
+
+    form div input[type="text"],
+    form div textarea {
+        font-size: 12px;
+    }
+
+    #modify-success-btn,
+    #back {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}

@@ -1,0 +1,20 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="AnswerMapper">	
+
+	    <insert id="save" parameterType="Answer">
+	    	insert into answer
+			(
+				qna_idx,
+				answer_idx,
+				answer,
+				created_date
+			)
+			values
+			(
+				#{qna_idx},
+				#{answer_idx},
+				#{answer},
+				sysdate()
+			)
+	    </insert>
+</mapper>

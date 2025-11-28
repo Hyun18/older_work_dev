@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+:root{
+	--color-main:#5c92ac;
+	--color-sub:#2d5f7a;
+    --color-back:#e0e2dc
+	--page-w:1200px;
+}
+
+.form-container {
+    max-width: 800px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 6rem auto;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.signup-form .form-group {
+    margin-bottom: 15px;
+}
+#zone, #dstrCd2Nm{
+	padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+	#gender, #hpNotiSdate, #hpNotiEdate, #projDate,
+	#hireCnt, #hpInvtCnt, #trnStatNm, #dstrCd2Nm{
+	padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+	}
+	
+	#telNum{
+	padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+	.signup-form .form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+	}
+
+
+textarea{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.signup-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.signup-form input[type="text"],
+.signup-form input[type="password"],
+.signup-form input[type="email"],
+.signup-form input[type="file"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.signup-form input[type="radio"] {
+    margin-right: 5px;
+}
+
+.signup-form .btn {
+    padding: 8px 12px;
+    background-color: var(--color-main);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width:100px;
+}
+
+.signup-form .btn:hover {
+    background-color: var(--color-main);
+}
+
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-main);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.submit-btn:hover {
+    background-color: #457287;
+}
+
+span {
+    color: red;
+} 

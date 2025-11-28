@@ -1,0 +1,146 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="UserMapper">	
+
+
+		 <!-- 개인회원 로그인 상태 확인 -->
+	    <select id="checkUserLogin" parameterType="User" resultType="User">
+	        SELECT * 
+	        FROM user 
+	        WHERE id = #{id} AND password = #{pw}
+	    </select>
+
+		<select id="findAll" resultType="User">
+			SELECT 
+				*
+			FROM `user`
+		</select>
+		
+		<select id="getByIdAndPw" parameterType="User" resultType="User" >
+			SELECT 
+				*
+			FROM `user`
+			WHERE id = #{id} AND pw = MD5(#{pw})
+		</select>
+	
+		<!-- 회원 탈퇴 -->
+		<update id="delUser" parameterType="User">
+			UPDATE `user`
+			SET
+				del_user='y'
+			WHERE id = #{id}
+		</update>
+		
+		
+		<!-- 회원 탈퇴한 사용자 아이디 제외 -->
+		<select id="getById" parameterType="String" resultType="User">
+			SELECT 
+				*
+			FROM `user`
+			WHERE id = #{id} AND del_user = 'n'
+		</select>
+		
+		<!-- del_user 값 확인( 기본값: n / 회원탈퇴한 사용자: y ) -->
+		<select id="checkDelUser" parameterType="User" resultType="String">
+			SELECT del_user
+			FROM `user`
+			WHERE id = #{id}
+		</select>
+
+	
+		 <!-- PW 찾기(id, 생년월일): md5 암호화 값으로 춝력됨-->
+		 <select id="findPW" parameterType="User" resultType="String">
+		    SELECT pw
+		    FROM `user`
+		    WHERE id = #{id}
+		    AND birth_year = #{birth_year}
+		    AND birth_month = #{birth_month}
+		    AND birth_day = #{birth_day}
+		</select>	
+				 
+		<!-- PW 수정(id, 생년월일) -->
+		<update id="updatePW" parameterType="User">
+			update `user`
+			set pw =  #{pw}
+	        where id = #{id} 
+		</update>
+		 
+		 <!-- ID 찾기(이름, 성별, 생년월일, 번호)-->
+		 <select id="findID" parameterType="User" resultType="String">
+		    SELECT id
+		    FROM `user`
+		    WHERE name = #{name}
+		    AND gender = #{gender}
+		    AND birth_year = #{birth_year}
+		    AND birth_month = #{birth_month}
+		    AND birth_day = #{birth_day}
+		   	AND phone = #{phone}
+		</select>	
+
+
+		<!-- 개인 회원 '기존 이름' 확인(이름 변경) -->
+		<select id="IdentityVerification" parameterType="User" resultType="String">
+		    SELECT name
+		    FROM `user`
+		    where name = #{name}
+		    AND birth_year = #{birth_year}
+		    AND birth_month = #{birth_month}
+		    AND birth_day = #{birth_day}
+		    AND gender = #{gender}
+		   	AND phone = #{phone}
+		</select>
+
+		<!-- 개인 회원 '이름' 수정(이름 변경) -->
+		<update id="updateName" parameterType="User">
+		    update `user`
+		    set 
+		        name = #{name}
+		    where id = #{id}
+		</update>
+
+
+	
+		<!-- 개인 회원 정보 수정 -->
+		<update id="update" parameterType="User">
+		    update `user`
+		    set 
+		        email = #{email},
+		        name = #{name},
+		        phone = #{phone},
+		        address = #{address}
+		    where id = #{id}
+		</update>
+	
+		<!-- useGeneratedKeys: pk값 바로 사용 -->
+	    <insert id="save" parameterType="User" useGeneratedKeys="true" keyProperty="user_idx">
+	    	insert into user
+			(
+				id,
+				pw,
+				name,
+				email,
+				birth_year,
+				birth_month,
+				birth_day,
+				gender,
+				phone,
+				address,
+				created_date,
+				del_user
+			)
+			values
+			(
+				#{id},
+				md5(#{pw}),
+				#{name},
+				#{email},
+				#{birth_year},
+				#{birth_month},
+				#{birth_day},
+				#{gender},
+				#{phone},
+				#{address},
+				sysdate(),
+				#{del_user}
+			)
+	    </insert>
+</mapper>

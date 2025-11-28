@@ -1,0 +1,26 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="QnAMapper">		
+
+	    <insert id="save" parameterType="QnA">
+	    	insert into qna
+			(
+				qna_idx,
+				user_idx,
+				c_idx,
+				title,
+				content,
+				views,
+				created_date
+			)
+			values
+			(
+				#{qna_idx},
+				#{user_idx},
+				#{c_idx},
+				#{title},
+				#{content},
+				#{views},
+           	 	sysdate()
+			)
+	    </insert>
+</mapper>

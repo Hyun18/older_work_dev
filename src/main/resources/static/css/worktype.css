@@ -1,0 +1,98 @@
+/* styles.css */
+
+/* 기본 설정 */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #d5e3ea;
+    color: #333;
+}
+:root{
+	--color-main:#5c92ac;
+	--color-sub:#2d5f7a;
+    --color-back:#e0e2dc
+	--page-w:1200px;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 2rem auto;
+    background: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+/* 제목 스타일 */
+.main-title {
+    font-size: 2rem;
+    text-align: center;
+    margin:80px;
+}
+
+.section-title {
+	color: var(--color-sub);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Job Card 공통 스타일 */
+.job-card {
+    display: flex;
+    align-items: center;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.job-card.large {
+    margin-bottom: 100px;
+}
+.job-icon{
+	width:200px;
+	display: flex;
+	justify-content: center;
+}
+.job-icon img {
+    width: 100px;
+    height: 100px;
+    margin-right: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.job-details {
+    flex: 1;
+}
+
+.job-title {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.job-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.job-details ul li {
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+}
+
+/* Job Card 그리드 */
+.job-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    gap: 1rem;
+    flex-direction: column;
+}

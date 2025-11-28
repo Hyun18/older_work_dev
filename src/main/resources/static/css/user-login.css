@@ -1,0 +1,172 @@
+@charset "UTF-8";
+@font-face {
+	font-family: "b";
+	font-style: normal;
+	src: url(../font/NotoSansKR-Black.ttf) format('truetype');
+}
+
+
+@font-face {
+	font-family: "r";
+	font-style: normal;
+	src: url(../font/NotoSansKR-Regular.ttf) format('truetype');
+}
+
+
+@font-face {
+	font-family: "m";
+	font-style: normal;
+	src: url(../font/NotoSansKR-Medium.ttf) format('truetype');
+}
+
+:root{
+    /* 메인 색상 */ 
+	--main-color1:#102A33;
+    --main-color2:#5A93AB;
+    --main-color3:#4B879E;
+    --main-color4:rgba(187, 211, 222, 0.6);
+    /* 페이지 너비 */
+    --page-w:1200px;
+	/* 상세정보 페이지 */
+	--detail-w:1000px;
+}
+
+body, h1, form, input, select, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f8f8f8;
+    min-height: 100vh;
+}
+
+
+/* 로그인 */
+.container {
+    width: 400px;
+    height: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px; 
+    background-color: #fff;
+}
+
+.header-top-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.header-top-area img {
+    width: 100px;
+}
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-family: "m";
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+/* 로그인 버튼 */
+.btn-group {
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-group button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#login-btn {
+    width: 100%;
+    background-color: var(--main-color3);
+    color: white;
+}
+
+#login-btn:active {
+    background-color: var(--main-color1);
+}
+
+/* 아이디 비번 회원가입 */
+#login-text {
+    margin-bottom: 20px;
+    font-size: 16px;
+    width: 100%;
+    height: 30px;
+    background-color: var(--main-color4);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #4B879E;
+    font-family: "m";
+    font-size: 14px;
+}
+#login-text a {
+    text-decoration: none;
+    color:var(--main-color1);
+    font-family: "m";
+    font-size: 14px;
+    margin-left: 5px;
+}
+.find-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+#find-id {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.find-group a {
+    text-decoration: none;    
+    color: var(--main-color1);
+}
+
+#find-id:hover {
+    font-weight: bold;
+    text-decoration: underline;
+    color: var(--main-color1);
+}
+
+#find-pw {
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+#find-pw:hover {
+    font-weight: bold;
+    text-decoration: underline;
+    color: var(--main-color1);
+}
+
+#join {
+    display: block;
+    text-align: center;
+}

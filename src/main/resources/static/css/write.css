@@ -1,0 +1,99 @@
+/* 전체 폼 스타일 */
+form {
+    max-width: 800px;
+    height:600px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* 제목 스타일 */
+h2 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* 폼 내부 요소 스타일 */
+form div {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+form div input[type="text"],
+form div textarea {
+    flex: 1;
+    margin-left: 10px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+}
+
+form div textarea {
+    height: 200px;
+    resize: none;
+}
+
+/* 버튼 컨테이너 */
+#button-container {
+    margin-top: 20px;
+	float: right;
+}
+
+/* 공통 버튼 스타일 */
+#button-container button {
+    display: inline-block;
+    width: 120px; /* 버튼의 동일한 너비 */
+    height: 40px; /* 버튼의 동일한 높이 */
+    line-height: 40px; /* 텍스트 수직 가운데 정렬 */
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+#button-container a{
+    display: inline-block;
+    width: 120px; /* 버튼의 동일한 너비 */
+    height: 40px; /* 버튼의 동일한 높이 */
+    line-height: 40px; /* 텍스트 수직 가운데 정렬 */
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    background-color: #6c757d;
+}
+
+/* 글작성 버튼 스타일 */
+#submit-btn {
+    background-color: #5C92AC;
+    margin-right: 10px; /* 뒤로가기 버튼과 간격 */
+}
+
+#submit-btn:hover {
+    transform: translateY(-2px);
+}
+
+
+

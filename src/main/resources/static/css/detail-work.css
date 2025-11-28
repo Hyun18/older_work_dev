@@ -1,0 +1,312 @@
+:root {
+    --main-color1: #102A33;
+    --main-color2: #5A93AB;
+    --main-color3: #4B879E;
+    --main-color4: rgba(187, 211, 222, 0.6);
+    --color-sub:#2d5f7a;
+    --color-main:#5c92ac;
+    --detail-width: 1000px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #fff;
+    padding: 10px 0;
+}
+
+header .inner {
+   width:var(--page-w);
+    height: 70px; /* 고정 높이 설정 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header .inner .title{
+    width: 150px;
+       
+}
+
+
+.logo {
+    height: 150px; /* 원하는 높이로 조정 */
+    width: auto; 
+    object-fit: contain; /* 이미지 비율 유지 */
+    vertical-align: middle; /* 수직 정렬 */
+    cursor: pointer;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .nav-link {
+    margin: 0 30px;
+    font-size: 18px;
+    color: var(--color-sub);
+    font-weight: 700;
+    text-decoration: none;
+    
+}
+
+.navbar .nav-link:hover {
+    transform: scale(1.05);
+    font-size: 18px;
+}
+
+.detail-main {
+    width: var(--detail-width);
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 10px;
+   
+    padding: 20px;
+}
+
+.inner {
+    width: 100%;
+}
+
+/* Header Section */
+.d-header {
+    background: rgba(221, 221, 221, 0.3);
+    border-top: 2px solid var(--main-color1);
+    border-bottom: 2px solid var(--main-color1);
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
+
+.dh-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dh-left {
+    flex: 1;
+}
+
+.l-top #orgName {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--main-color2);
+}
+
+.l-bottem {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.l-bottem #content {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.l-bottem #states {
+    font-size: 14px;
+    font-weight: 600;
+    background-color: var(--main-color3);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.dh-right {
+    text-align: right;
+}
+
+.dh-right span {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: var(--main-color1);
+    font-weight: bold;
+}
+
+/* Content Sections */
+.d-content {
+    width: 100%;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--main-color4);
+    display: flex;
+    align-items: center;
+}
+
+.d-inner {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.d-left {
+    flex: 0 0 15%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--main-color1);
+    border-right: 2px solid #ddd;
+    padding-right: 10px;
+}
+
+.d-center {
+    flex: 0 0 35%;
+    padding-left: 20px;
+}
+
+.d-center span {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: var(--main-color1);
+}
+
+.d-right {
+	font-weight:700;
+    flex: 1;
+    font-size: 14px;
+    color: #333;
+}
+
+.d-right span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Buttons Section */
+#btn {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#btn #submit-btn,
+#btn #list-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid var(--main-color4);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#btn #submit-btn {
+    background-color: var(--main-color3);
+    color: #fff;
+    margin-right: 10px;
+}
+
+#btn #list-btn {
+    background-color: #fff;
+    color: var(--main-color3);
+}
+
+/* Footer */
+footer {
+    background: var(--main-color1);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    border-top: 2px solid var(--main-color2);
+}
+
+footer .footer-content p {
+    margin: 5px 0;
+}
+
+/* 노인 일자리  */
+.item-title {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+  }
+  
+  .nav-link {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--color-main);
+    cursor: pointer;
+    padding: 10px 15px;
+    display: inline-block;
+  }
+  
+  /* 드롭다운 리스트 스타일 */
+  .item-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    min-width: 150px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .item-title:hover .item-list {
+    max-height: 200px;
+    opacity: 1;
+  }
+  
+  .item-list-item {
+    padding: 4px 15px;
+  }
+  
+  .item-list-item a {
+    color: var(--color-sub);
+    text-decoration: none;
+    display: block;
+    transition: color 0.2s ease;
+  }
+  
+  .item-list-item a:hover {
+    color: var(--color-main);
+  }
+  
+  .footer1 {
+	background-color:var(--main-color2);
+    color: #fff;
+    padding: 20px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-content1{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.footer-content1 p {
+   font-size: 14px;
+    text-align: left;
+    margin: 5px 0;
+}
+
+.footer-content1 p {
+    margin: 5px 0;
+}

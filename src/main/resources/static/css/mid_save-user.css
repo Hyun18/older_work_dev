@@ -1,0 +1,84 @@
+/* 전체 레이아웃 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f3f4f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+:root{
+	--color-main:#5c92ac;
+	--color-sub:#2d5f7a;
+    --color-back:#e0e2dc;
+	/* --page-w:1200px; */
+}
+
+/* 컨테이너 */
+.container {
+    text-align: center;
+    padding: 40px;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.container h1 {
+    font-size: 32px;
+    color: #214558;;
+    margin-bottom: 50px;
+}
+
+/* 카드 컨테이너 */
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* 카드 */
+.card {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 40px;
+    text-align: center;
+   
+}
+
+
+
+/* 아이콘 */
+.card .icon {
+    font-size: 80px;
+    margin-bottom: 25px;
+    object-fit: cover;
+    color:var(--color-sub);
+}
+
+/* 제목 */
+.card .title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+/* 버튼 */
+.card .btn {
+    display: inline-block;
+    background-color: var(--color-main);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.card .btn:hover {
+    background-color: #27546b;
+}

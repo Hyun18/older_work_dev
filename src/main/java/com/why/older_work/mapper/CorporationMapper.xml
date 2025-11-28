@@ -1,0 +1,101 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="CorporationMapper">	
+
+	<!-- 탈퇴 -->
+    <delete id="delCorporation" parameterType="Corporation">
+    	delete
+    	from corporation
+    	where c_idx = #{c_idx}
+    </delete>
+
+	<select id="findByCIdx" parameterType="int" resultType="Corporation">
+		SELECT
+		*
+		FROM corporation
+		WHERE c_idx = #{c_idx}
+	</select>
+
+
+	<!-- 기업회원 로그인 상태 확인 -->
+    <select id="checkCorporationLogin" parameterType="String" resultType="Corporation">
+        SELECT * 
+        FROM corporation 
+        WHERE m_id = #{m_id} AND m_pw = #{m_pw}
+    </select>
+
+
+	<select id="findByMId" parameterType="String" resultType="Corporation"> 
+		SELECT 
+		* 
+		FROM `corporation`
+		WHERE m_id = #{m_id} 
+	</select>
+
+	<select id = "getByIdAndPw" parameterType="Corporation" resultType="Corporation">
+		select
+		*
+		from `corporation`
+		where m_id=#{m_id} and m_pw=md5(#{m_pw})
+	</select>
+	
+
+	<update id="update" parameterType="Corporation">
+		update `corporation`
+		set
+            m_pw = md5(#{m_pw}),
+            m_name = #{m_name},
+            m_tel = #{m_tel},
+            m_email = #{m_email},
+            m_part = #{m_part}
+            
+		where m_id = #{m_id}
+			
+	
+	</update>
+
+    <insert id="save" parameterType="Corporation" useGeneratedKeys="true" keyProperty="c_idx">
+        INSERT INTO corporation 
+        (
+            code,
+            name,
+            p_nm,
+            type,
+            tel,
+            insurance,
+            fax,
+            employees,
+            address,
+            zone,
+            m_id,
+            m_pw,
+            m_name,
+            m_tel,
+            m_email,
+            m_part,
+            created_date
+        )
+        VALUES
+        (
+            #{code},
+            #{name},
+            #{p_nm},
+            #{type},
+            #{tel},
+            #{insurance},
+            #{fax},
+            #{employees},
+            #{address},
+            #{zone},
+            #{m_id},
+            md5(#{m_pw}),
+            #{m_name},
+            #{m_tel},
+            #{m_email},
+            #{m_part},
+            sysdate()
+        )
+
+	</insert>
+
+
+</mapper>

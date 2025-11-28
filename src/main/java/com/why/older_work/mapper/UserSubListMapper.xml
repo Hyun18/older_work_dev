@@ -1,0 +1,117 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="UserSubListMapper">		
+
+	    
+	    <!-- 신청 일자리 출력(우리 일자리 산청 내역만 출력) -->
+ 	    <select id="getUserApplicationList" parameterType="UserSubList" resultType="SubListDto">
+	        SELECT u.usersub_idx, u.user_idx, u.projNo, u.detail_idx, u.created_date, 
+	               d.orgName, d.trnStatNm, d.projRecuJtype, d.arrange, d.hpNotiSdate, d.hpNotiEdate
+	        FROM usersublist u
+	        JOIN detail d ON u.detail_idx = d.detail_idx
+	        WHERE u.user_idx = #{user_idx} 
+	    </select> 
+	    
+	    <!-- 지원현황 > '최종합격' 개수 출력 -->
+		<select id="countFinalPass" parameterType="User" resultType="Integer">
+			SELECT COUNT(*) AS 최종합격
+			FROM (
+			    SELECT u.result
+			    FROM usersublist u
+			    WHERE u.user_idx = #{user_idx}
+			) AS combined_results
+			WHERE result = '최종합격'
+	    </select>
+	    
+	    <!-- 지원현황 > '진행중' 개수 출력 -->
+		<select id="countinProgress" parameterType="User" resultType="Integer">
+			SELECT COUNT(*) AS 모집중_수
+			FROM (
+			    SELECT u.usersub_idx, u.user_idx, u.projNo, u.detail_idx, u.created_date, d.orgName, d.trnStatNm, d.projRecuJtype, d.arrange, d.hpNotiSdate, d.hpNotiEdate
+			    FROM usersublist u
+			    JOIN detail d 
+			        ON u.detail_idx = d.detail_idx 
+			    WHERE u.user_idx = #{user_idx}
+			    
+			    UNION
+			    
+			    SELECT u.usersub_idx, u.user_idx, u.projNo, u.detail_idx, u.created_date, d.orgName, d.trnStatNm, d.projRecuJtype, d.arrange, d.hpNotiSdate, d.hpNotiEdate
+			    FROM usersublist u
+			    LEFT JOIN detail d 
+			        ON u.detail_idx = d.detail_idx  
+			    WHERE u.user_idx = #{user_idx}
+			    AND u.detail_idx = 0                          
+			) AS combined_results
+			WHERE trnStatNm = '모집중'
+	    </select>
+		
+		<!-- 지원현황 > '지원완료' 개수 출력 -->
+		<select id="ApplicationCompleted" parameterType="User" resultType="Integer">
+			SELECT COUNT(*) 
+			FROM usersublist
+			LEFT JOIN detail 
+			ON usersublist.detail_idx = detail.detail_idx
+			WHERE usersublist.user_idx = #{user_idx} 
+  		</select>
+  		
+  		<!-- 신청 취소 -->
+  		<delete id="cancelApplication" parameterType="UserSubList">
+				DELETE from usersublist
+				WHERE usersub_idx = #{usersub_idx} 
+  		</delete>
+  		
+		
+		<!-- 일자리 중복신청 확인 -->
+		<select id="countSameSubList" parameterType="UserSubList" resultType="Integer">
+				SELECT COUNT(*) 
+				FROM usersublist
+				WHERE user_idx = #{user_idx} 
+	  			AND (projNo IS NULL OR projNo = #{projNo})
+	  			AND detail_idx = #{detail_idx} 
+  		</select>
+		
+
+	    <insert id="subListSave" parameterType="UserSubList" useGeneratedKeys="true" keyProperty="usersub_idx">
+	    	insert into usersublist
+			(
+				usersub_idx,
+				user_idx,
+				detail_idx,
+				projNo,
+				created_date
+			)
+			values
+			(
+				#{usersub_idx},
+				#{user_idx},
+				#{detail_idx},
+				#{projNo},
+           	 	sysdate()
+			)
+	    </insert>
+	    
+	   <!-- 기업이 지원한 유저 확인 -->
+       <select id="CorporationList" parameterType="int" resultType="com.why.older_work.dto.SubListDto">
+           SELECT us.usersub_idx, 
+           us.user_idx, 
+           us.projNo, 
+           us.detail_idx, 
+           us.created_date,
+           d.orgName, 
+           d.trnStatNm, 
+           d.projRecuJtype, 
+           u.name,
+           u.email,
+           u.birth_year,
+           u.birth_month,
+           u.birth_day,
+           u.gender,
+           u.phone,
+           u.address
+           
+            <!-- user 테이블에서 가져올 추가 필드들 -->
+           FROM usersublist AS us
+           INNER JOIN detail AS d ON us.detail_idx = d.detail_idx
+           INNER JOIN user AS u ON us.user_idx = u.user_idx
+           WHERE d.c_idx = #{c_idx}
+       </select>
+</mapper>

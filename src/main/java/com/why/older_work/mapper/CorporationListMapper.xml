@@ -1,0 +1,56 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="CorporationListMapper">
+
+    <!-- 구직 신청 저장 -->
+    <insert id="save" parameterType="CorporationList" useGeneratedKeys="true" keyProperty="cl_idx">
+        INSERT 
+        INTO corporationlist 
+        (
+        c_idx, 
+        user_idx, 
+        detail_idx
+        )
+        
+        VALUES 
+        (
+        #{c_idx}, 
+        #{user_idx}, 
+        #{detail_idx}
+        )
+        
+    </insert>
+    
+    <!-- 특정 기업에 대한 신청 내역 조회 -->
+    <select id="findAll" resultType="Map">
+        SELECT 
+            cl.cl_idx,
+            cl.c_idx,
+            cl.user_idx,
+            cl.detail_idx,
+            c.code AS corporation_code,
+            c.name AS corporation_name,
+            u.id AS user_id,
+            u.name AS user_name,
+            u.email AS user_email,
+            u.birth_year AS user_birth_year,
+            u.birth_month AS user_birth_month,
+            u.birth_day AS user_birth_day,
+            u.gender AS user_gender,
+            u.phone AS user_phone,
+            u.address AS user_address,
+            d.content AS job_content,
+            d.projDate AS project_date
+        FROM 
+            corporationlist AS cl
+        INNER JOIN 
+            corporation AS c ON cl.c_idx = c.c_idx
+        INNER JOIN 
+            user AS u ON cl.user_idx = u.user_idx
+        INNER JOIN 
+            detail AS d ON cl.detail_idx = d.detail_idx
+        WHERE
+            c.c_idx = #{corporation_idx}
+        ORDER BY 
+            cl.cl_idx DESC;
+    </select>
+</mapper>
