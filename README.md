@@ -42,7 +42,7 @@ project/
 - 사용한 언어/프레임워크/라이브러리
 <img width="543" height="307" alt="스크린샷 2025-11-29 오전 3 09 24" src="https://github.com/user-attachments/assets/e24f9672-dc22-4df1-8233-db65b59931cc" />
 
-## 팀정보 (Authors)
+## 팀정보
 - 강다영, 김진송, 김현희, 박성준
 
 ## 포트폴리오
