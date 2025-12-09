@@ -23,6 +23,9 @@ dependencies {
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	// Thymeleaf
+	// implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	
 	//JSP(뷰)를 보여주기 위한 세팅
 	implementation 'javax.servlet:jstl'
@@ -31,8 +34,9 @@ dependencies {
 	//mybatis 
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.2'
 	
-	//mariadb(선택)
-	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client:2.7.4'
+	//mariadb
+	// runtimeOnly 'org.mariadb.jdbc:mariadb-java-client:2.7.4'
+	implementation 'org.mariadb.jdbc:mariadb-java-client:3.3.3'
 
 	// https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
 	implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
